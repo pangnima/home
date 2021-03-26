@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, target-densitydpi=medium-dpi">
+	<title>경기도 오더</title>
+
+	<!-- 공통: font preload -->
+	<link rel="preload" href="https://cdn.orderpick.kr/font/NotoSansCJKkr-Regular.woff" type="font/woff" as="font" crossorigin>
+	<link rel="preload" href="https://cdn.orderpick.kr/font/NotoSansCJKkr-Medium.woff" type="font/woff" as="font" crossorigin>
+	<link rel="preload" href="https://cdn.orderpick.kr/font/NotoSansCJKkr-Bold.woff" type="font/woff" as="font" crossorigin>
+	<link rel="preload" href="https://cdn.orderpick.kr/font/GyeonggiTitle_Medium.woff" type="font/woff" as="font" crossorigin>
+	<!-- //공통: font preload -->
+
+	<!-- 공통: css -->
+	<link rel="stylesheet" href="static/css/style.css">
+	<!-- //공통: css -->
+</head>
+<!-- 
+	**======================================
+	2020-10-23 변경 내역
+	메인 화면에서만 .wrap에 height-full / bg-color-1 추가
+	======================================**
+-->
+<body>
+
+	<!-- wrap -->
+	<div class="wrap height-full bg-color-1">
+
+		<!-- swiper-banner -->
+		<div class="swiper-banner">
+			<!-- 배너영역 로딩 -->
+			<div class="skeleton-wrap" data-skeleton="banner"></div>
+			<!-- // 배너영역 로딩 -->
+		</div>
+		<!-- //swiper-banner -->
+
+		<div class="grid-content">
+			<!-- box-search -->
+			<div class="box-search">
+				<input type="text" id="iptSearch">
+				<label for="iptSearch" class="font-ellipsis">먹고 싶은 <span class="font-highlight"><span>메뉴, 매장</span><span class="highlight-bar"></span></span>을 검색하세요!</label>
+				<a href="javascript:void(0);" class="btn-search" title="검색"><span class="icon-search"><span>검색</span></span></a>
+			</div>
+			<!-- //box-search -->
+
+			<h2 class="title-type-1 pl-2"><span class="font-point-1">오늘,</span> 뭐 드실래요?</h2>
+
+			<!-- list-menu-1 -->
+			<div class="skeleton-wrap" data-skeleton="menuList">
+				<ul>
+					<li>
+						<div></div>
+						<div></div>
+					</li>
+					<li>
+						<div></div>
+						<div></div>
+					</li>
+					<li>
+						<div></div>
+						<div></div>
+					</li>
+					<li>
+						<div></div>
+						<div></div>
+					</li>
+					<li>
+						<div></div>
+						<div></div>
+					</li>
+					<li>
+						<div></div>
+						<div></div>
+					</li>
+					<li>
+						<div></div>
+						<div></div>
+					</li>
+					<li>
+						<div></div>
+						<div></div>
+					</li>
+					<li>
+						<div></div>
+						<div></div>
+					</li>
+					<li>
+						<div></div>
+						<div></div>
+					</li>
+					<li>
+						<div></div>
+						<div></div>
+					</li>
+					<li>
+						<div></div>
+						<div></div>
+					</li>
+				</ul>
+			</div>
+			<!-- //list-menu-1 -->
+		</div>
+
+		<div class="grid-content gap-2 bg-color-white">
+			<h2 class="title-type-1 mt-0">오늘 주문하면 <span class="font-point-2">#할인</span> 혜택이!</h2>
+
+			<!-- list-box-1 -->
+			<ul class="list-box-1">
+				<!-- list -->
+				<li>
+					<a href="#none">
+						<span class="img-thumb" style="background-image:url('static/images/@none_2.png');"></span>
+						<span class="txt-wrap is-coupon"> <!-- 쿠폰 아이콘 .is-coupon -->
+							<span class="title">본가 안동찜닭</span>
+							<!-- 20201104 수정 font-ellipsis 클래스 추가 -->
+							<span class="txt font-ellipsis">한마리찜닭, 두마리찜닭</span>
+						</span>
+					</a>
+				</li>
+				<li>
+					<a href="#none">
+						<span class="img-thumb" style="background-image:url('static/images/@none_3.png');"></span>
+						<span class="txt-wrap is-coupon"> <!-- 쿠폰 아이콘 .is-coupon -->
+							<span class="title">전주 백정 한식야식</span>
+							<span class="txt font-ellipsis">한마리찜닭, 두마리찜닭</span>
+						</span>
+					</a>
+				</li>
+				<li>
+					<a href="#none">
+						<span class="img-thumb" style="background-image:url('static/images/@none_2.png');"></span>
+						<span class="txt-wrap is-coupon"> <!-- 쿠폰 아이콘 .is-coupon -->
+							<span class="title">본가 안동찜닭본가 안동찜닭본가 안동찜닭본가 안동찜닭</span>
+							<span class="txt font-ellipsis">한마리찜닭, 두마리찜닭한마리찜닭, 두마리찜닭한마리찜닭, 두마리찜닭한마리찜닭, 두마리찜닭</span>
+						</span>
+					</a>
+				</li>
+				<!-- //list -->
+			</ul>
+			<!-- //list-box-1 -->
+
+			<!-- list-box-1 -->
+			<div class="skeleton-wrap" data-skeleton="boxList">
+				<div class="row">
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+				<div class="row">
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+				<div class="row">
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			<!-- //list-box-1 -->
+		</div>
+
+		<div class="grid-content gap-3">
+			<h2 class="title-type-1 mt-0"><span class="font-point-3">인기</span>있는 동네 <span class="font-point-1">맛집</span></h2>
+
+			<!-- list-thumb-1 -->
+			<ul class="list-thumb-1">
+				<!-- list -->
+				<li>
+					<a href="#none">
+						<span class="img-thumb" style="background-image:url('static/images/@none_2.png');"></span>
+						<span class="txt-wrap">
+							<span class="icon-1st">1st</span>
+							<span class="title">두마리 찜닭 홍대점<span class="icon-coupon">쿠폰</span></span>
+							<span class="list-1">
+								<span><span class="icon-star">별점</span>4.8</span>
+								<span><span class="icon-location">거리</span>648m</span>
+							</span>
+							<!-- 20201104 수정 font-ellipsis 클래스 추가 -->
+							<span class="txt mt-2 font-ellipsis">한마리찜닭, 두마리찜닭,치즈찜닭</span>
+						</span>
+					</a>
+				</li>
+				<li>
+					<a href="#none">
+						<span class="img-thumb" style="background-image:url('static/images/@none_2.png');"></span>
+						<span class="txt-wrap">
+							<span class="icon-2nd">2nd</span>
+							<span class="title">두마리 찜닭 홍대점<span class="icon-coupon">쿠폰</span></span>
+							<span class="list-1">
+								<span><span class="icon-star">별점</span>4.8</span>
+								<span><span class="icon-location">거리</span>648m</span>
+							</span>
+							<span class="txt mt-2 font-ellipsis">한마리찜닭, 두마리찜닭,치즈찜닭</span>
+						</span>
+					</a>
+				</li>
+				<li>
+					<a href="#none">
+						<span class="img-thumb" style="background-image:url('static/images/@none_2.png');"></span>
+						<span class="txt-wrap">
+							<span class="icon-3rd">3rd</span>
+							<span class="title">두마리 찜닭 홍대점 두마리 찜닭 홍대점 두마리 찜닭 홍대점<span class="icon-coupon">쿠폰</span></span>
+							<span class="list-1">
+								<span><span class="icon-star">별점</span>4.8</span>
+								<span><span class="icon-location">거리</span>648m</span>
+							</span>
+							<span class="txt mt-2 font-ellipsis">한마리찜닭, 두마리찜닭,치즈찜닭한마리찜닭, 두마리찜닭,치즈찜닭한마리찜닭, 두마리찜닭,치즈찜닭</span>
+						</span>
+					</a>
+				</li>
+				<!-- //list -->
+			</ul>
+			<!-- //list-thumb-1 -->
+
+			<!-- list-thumb-1 -->
+			<div class="skeleton-wrap" data-skeleton="listThumb">
+				<div class="row">
+					<div class="thum"></div>
+					<div class="info">
+						<p></p>
+						<p></p>
+						<p></p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="thum"></div>
+					<div class="info">
+						<p></p>
+						<p></p>
+						<p></p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="thum"></div>
+					<div class="info">
+						<p></p>
+						<p></p>
+						<p></p>
+					</div>
+				</div>
+			</div>
+			<!-- //list-thumb-1 -->
+		</div>
+
+		<!-- footer info -->
+		<div class="grid-content gap-2 bg-color-white">
+			<p class="title-type-8">코리아경기도 주식회사</p>
+			<div class="txt-type-6">
+				<p>대표이사 : 이석훈 | 사업자등록번호 : 696-88-00546</p>
+				<p>통신판매업 : XXXXXXXXXXXXXXX</p>
+				<p>주소 : 경기도성남시 분당구 판교로289번길 20(삼평동),13488</p>
+				<p>대표전화 : 031-5171-5555</p>
+			</div>
+		</div>
+		<!-- // footer info -->
+	</div>
+	<!-- //wrap -->
+
+	<!-- 공통: js -->
+	<script type="text/javascript" src="static/js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="static/js/front.js"></script>
+	<!-- //공통: js -->
+
+	<!-- 해당페이지 js -->
+	<script type="text/javascript" src="static/js/swiper.fix.js"></script>
+	<script>
+		$(document).ready(function(){
+			// .swiper-banner swiper.js 적용
+			var swiperBanner = new Swiper('.swiper-banner > .swiper-container', {
+				autoplay: {
+					delay: 5000,
+					disableOnInteraction: false,
+				},
+				loop: true,
+				speed: 300,
+				autoHeight: true,
+				pagination: {
+					el: '.swiper-pagination',
+					type: 'fraction',
+				}
+			});
+
+			// .box-search placeholder 기능 적용
+			$('.box-search > input').applyPlaceholder();
+		});
+	</script>
+	<!-- //해당페이지 js -->
+</body>
+</html>

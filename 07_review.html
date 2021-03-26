@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, target-densitydpi=medium-dpi">
+	<title>경기도 오더</title>
+
+	<!-- 공통: font preload -->
+	<link rel="preload" href="https://cdn.orderpick.kr/font/NotoSansCJKkr-Regular.woff" type="font/woff" as="font" crossorigin>
+	<link rel="preload" href="https://cdn.orderpick.kr/font/NotoSansCJKkr-Medium.woff" type="font/woff" as="font" crossorigin>
+	<link rel="preload" href="https://cdn.orderpick.kr/font/NotoSansCJKkr-Bold.woff" type="font/woff" as="font" crossorigin>
+	<link rel="preload" href="https://cdn.orderpick.kr/font/GyeonggiTitle_Medium.woff" type="font/woff" as="font" crossorigin>
+	<!-- //공통: font preload -->
+
+	<!-- 공통: css -->
+	<link rel="stylesheet" href="static/css/style.css">
+	<!-- //공통: css -->
+</head>
+<body>
+	<!-- wrap -->
+	<div class="wrap">
+		<!-- 주문한 정보 -->
+		<div class="grid-content">
+			<span class="txt-type-4">2020-08-01(토)</span>
+			<h2 class="txt-type-9">연남동 디저트 듀윗</h2>
+			<p class="txt-type-4">아메리칸 햄 치즈 샌드위치 외 2개 <span>14,300원</span></p>
+		</div>
+		<!-- // 주문한 정보 -->
+
+		<!-- 별점 -->
+		<div class="grid-content gap-11">
+			<h2 class="txt-type-9 txt-align-center">식사는 어떠셨어요?</h2>
+			<div class="review-rating txt-align-center">
+				<span class="icon-5star big"><span class="rate" style="width:70%;"></span></span>
+			</div>
+		</div>
+		<!-- // 별점 -->
+		
+		<!-- 태그 선택 -->
+		<div class="grid-content gap-11">
+			<h2 class="txt-type-9 txt-align-center">조금 더 자세히 알려주세요!</h2>
+			<div style="padding-bottom:30px;">
+				<p class="txt-type-8 medium">맛과 양은 어떠셨어요? <span class="font-point-4 txt-type-6 normal">(중복 선택 가능)</span></p>
+				<ul class="review-list">
+					<li>
+						<input type="checkbox" id="revieTaste-1">
+						<label for="revieTaste-1">맛집 인정이에요</label>
+					</li>
+					<li>
+						<input type="checkbox" id="revieTaste-2">
+						<label for="revieTaste-2">다음에도 주문하고 싶은 맛이에요.</label>
+					</li>
+					<li>
+						<input type="checkbox" id="revieTaste-3">
+						<label for="revieTaste-3">가격대비 가성비가 좋아요.</label>
+					</li>
+					<li>
+						<input type="checkbox" id="revieTaste-4">
+						<label for="revieTaste-4">한 번쯤 먹을만해요.</label>
+					</li>
+					<li>
+						<input type="checkbox" id="revieTaste-5">
+						<label for="revieTaste-5">사이드 메뉴가 아쉬워요.</label>
+					</li>
+					<li>
+						<input type="checkbox" id="revieTaste-6">
+						<label for="revieTaste-6">실망이에요.</label>
+					</li>
+					<li>
+						<input type="checkbox" id="revieTaste-7">
+						<label for="revieTaste-7">실망이에요.</label>
+					</li>
+					<li>
+						<input type="checkbox" id="revieTaste-8">
+						<label for="revieTaste-8">간이 안맞아요.</label>
+					</li>
+				</ul>
+				<button type="button"><span>더보기</span></button>
+			</div>
+
+			<div>
+				<p class="txt-type-8 medium">추가적으로 평가할 점을 알려주세요. <span class="font-point-4 txt-type-6 normal">(중복 선택 가능)</span></p>
+				<ul class="review-list">
+					<li>
+						<input type="checkbox" id="revieOther-1">
+						<label for="revieOther-1">서비스를 주셨어요!</label>
+					</li>
+					<li>
+						<input type="checkbox" id="revieOther-2">
+						<label for="revieOther-2">요청 사항을 잘 들어줘요.</label>
+					</li>
+					<li>
+						<input type="checkbox" id="revieOther-3">
+						<label for="revieOther-3">포장 상태가 좋아요.</label>
+					</li>
+					<li>
+						<input type="checkbox" id="revieOther-4">
+						<label for="revieOther-4">건강한 맛이에요.</label>
+					</li>
+					<li>
+						<input type="checkbox" id="revieOther-5">
+						<label for="revieOther-5">집밥 느낌이에요.</label>
+					</li>
+					<li>
+						<input type="checkbox" id="revieOther-6">
+						<label for="revieOther-6">아이들이 좋아해요.</label>
+					</li>
+					<li>
+						<input type="checkbox" id="revieOther-7">
+						<label for="revieOther-7">혼밥하기 좋아요.</label>
+					</li>
+					<li>
+						<input type="checkbox" id="revieOther-8">
+						<label for="revieOther-8">서비스 개선이 필요해요.</label>
+					</li>
+					<li>
+						<input type="checkbox" id="revieOther-9">
+						<label for="revieOther-9">포장상태 개선이 필요해요..</label>
+					</li>
+					<li>
+						<input type="checkbox" id="revieOther-10">
+						<label for="revieOther-10">위생상태 개선이 필요해요.</label>
+					</li>
+					<li>
+						<input type="checkbox" id="revieOther-11">
+						<label for="revieOther-11">요청 사항이 누락됐어요.</label>
+					</li>
+					<li>
+						<input type="checkbox" id="revieOther-12">
+						<label for="revieOther-12">전화 통화가 어려웠어요.</label>
+					</li>
+				</ul>
+				<button type="button"><span>더보기</span></button>
+			</div>
+		</div>
+		<!-- // 태그 선택 -->
+
+		<!-- 사진 첨부  -->
+		<div class="grid-content gap-11">
+			<h2 class="txt-type-9 txt-align-center">사진을 첨부해주세요!</h2>
+			<div class="swiper-container review-photo">
+				<ul class="swiper-wrapper">
+					<li class="swiper-slide">
+						<input type="file" id="uploadImg">
+						<label for="uploadImg">
+							<span>사진(<em>0</em>/5)</span>
+						</label>
+					</li>
+					<li class="swiper-slide">
+						<figure>
+							<img src="static/images/@photo.png" alt="">
+						</figure>
+						<button type="button" class="icon-close"><span>닫기</span></button>
+					</li>
+					<li class="swiper-slide">
+						<figure>
+							<img src="static/images/@photo.png" alt="">
+						</figure>
+						<button type="button" class="icon-close"><span>닫기</span></button>
+					</li>
+					<li class="swiper-slide">
+						<figure>
+							<img src="static/images/@photo.png" alt="">
+						</figure>
+						<button type="button" class="icon-close"><span>닫기</span></button>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- // 사진 첨부  -->
+
+		<div class="grid-content">
+			<h2 class="txt-type-9 txt-align-center">특별히 추천하는 메뉴가 있으신가요?</h2>
+			<ul class="review-list-2">
+				<li>
+					<input type="checkbox" id="orderMenu-1">
+					<label for="orderMenu-1">아메리칸 햄 치즈 샌드위치</label>
+				</li>
+				<li>
+					<input type="checkbox" id="orderMenu-2">
+					<label for="orderMenu-2">치킨 시저 샐러드</label>
+				</li>
+				<li>
+					<input type="checkbox" id="orderMenu-3">
+					<label for="orderMenu-3">당근케이크</label>
+				</li>
+			</ul>
+		</div>
+
+		<div class="grid-content">
+			<h2 class="txt-type-9 txt-align-center">배달 서비스를 평가해주세요.</h2>
+			<ul class="review-list-2 harte">
+				<li>
+					<input type="checkbox" id="delivery-1">
+					<label for="delivery-1">빠르게 도착 했어요.</label>
+				</li>
+				<li>
+					<input type="checkbox" id="delivery-2">
+					<label for="delivery-2">친절해요.</label>
+				</li>
+				<li>
+					<input type="checkbox" id="delivery-3">
+					<label for="delivery-3">요청 사항을 잘 들어줬어요.</label>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- //wrap -->
+
+	<!-- 공통: js -->
+	<script type="text/javascript" src="static/js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="static/js/front.js"></script>
+	<!-- //공통: js -->
+
+	<!-- 해당페이지 js -->
+	<script type="text/javascript" src="static/js/swiper.fix.js"></script>
+	<script>
+		$(document).ready(function(){
+			var photos = new Swiper('.swiper-container', {
+				width: 100,
+				spaceBetween:10
+			});
+		})
+	</script>
+	<!-- //해당페이지 js -->
+
+</body>
+</html>
