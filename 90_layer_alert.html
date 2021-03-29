@@ -49,7 +49,9 @@
 			<br>
 			<a href="javascript:void(0);" class="btn-layer-open" data-layer-target="#layer12">alert형 레이어팝업 12 열기 (편의점얼럿2)</a>
 			<br>
-			<a href="javascript:void(0);" class="btn-layer-open" data-layer-target="#layer12">alert형 레이어팝업 13 열기 (테스트용 팝업)</a>
+			<a href="javascript:void(0);" class="btn-layer-open" data-layer-target="#layer13">alert형 레이어팝업 13 열기 (테스트용 팝업)</a>
+			<br>
+			<a href="javascript:void(0);" class="btn-layer-open" data-layer-target="#layer14">alert형 레이어팝업 14 열기 (리뷰작성 그만두기)</a>
 			<br>
 			<br>
 			<br>
@@ -333,6 +335,31 @@
 		</div><div class="inner-blank"></div>
 	</div>
 	<!-- //alert형 레이어팝업 13 -->
+
+	<!-- alert형 레이어팝업 14 -->
+	<div class="box-layer" id="layer14">
+		<div class="inner-layer">
+			<div class="grid-layer">
+				<!-- box-layer-alert -->
+				<div class="box-layer-alert">
+					<div class="inner">
+						<p class="font-medium txt-braak">정말 리뷰 작성을 그만두시겠어요?</p>
+						<p class="font-point-2 txt-type-4 txt-braak">작성하시던 내용이 저장되지 않습니다.</p>
+						<!-- <span class="font-point-3 font-medium">주문취소</span>를 진행하시겠습니까? -->
+					</div>
+				</div>
+				<!-- //box-layer-alert -->
+			</div>
+
+			<ul class="list-btn-col2 no-gap">
+				<!-- 레이어팝업내 닫기 처리할 곳에 .dialog-close 추가 -->
+				<li><a href="javascript:void(0);" class="btn-rect-1 color-2 dialog-close">계속 작성하기</a></li>
+				<li><a href="javascript:void(0);" class="btn-rect-1">그만두기</a></li>
+			</ul>
+		</div><div class="inner-blank"></div>
+	</div>
+	<!-- //alert형 레이어팝업 14 -->
+
 	<!-- //layer popup -->
 
 	<!-- 공통: js -->
@@ -349,7 +376,7 @@
 			});
 
 			// test용
-			$('#layer13').waLayer('open');
+			$('#layer14').waLayer('open');
 		});
 	</script>
 	<!-- //해당페이지 js -->
