@@ -24,7 +24,7 @@
 			<!-- 주문한 정보 -->
 			<div class="grid-content gap-12 bg-color-white">
 				<span class="txt-type-4">2020-08-01(토)</span>
-				<h2 class="txt-type-9 m-0">연남동 디저트 듀윗</h2>
+				<h2 class="txt-type-9 p-0">연남동 디저트 듀윗</h2>
 				<p class="txt-type-4 mt-2">아메리칸 햄 치즈 샌드위치 외 2개 <span>14,300원</span></p>
 			</div>
 			<!-- // 주문한 정보 -->
@@ -164,131 +164,6 @@
 					type: 'fraction',
 				}
 			});
-			
-
-			var json = {
-			'children': [{
-					'name': '1맛집 인정이에요',
-					'value': 1
-				},
-				{
-					'name': '2다음에도 주문하고 싶은 맛이에요',
-					'value': 2
-				},
-				{
-					'name': '3가격대비 가성비가 좋아요',
-					'value': 3
-				},
-				{
-					'name': '4한 번쯤 먹을만해요',
-					'value': 4
-				},
-				{
-					'name': '5사이드 메뉴가 아쉬워요',
-					'value': 5
-				},
-				{
-					'name': '6실망이에요',
-					'value': 6
-				},
-				{
-					'name': '7양이 적어요',
-					'value': 7
-				}
-			]
-		}
-
-		// var colors = ["red", "blue", "green", "black"]
-
-		var diameter = window.innerWidth,
-			color = d3.scaleOrdinal().domain([0, 2]).range(["#57cbff", "#ffea74", "#394565", "#f4649c", "#7f5dc7"])
-
-		var colorScale = d3.scaleLinear()
-			.domain([0, d3.max(json.children, function (d) {
-				return d.value;
-			})])
-			.range(["rgb(46, 73, 123)", "rgb(71, 187, 94)"]);
-
-		var bubble = d3.pack()
-			.size([diameter, diameter])
-			.padding(-15);
-
-		var margin = {
-			left: 0,
-			right: 0,
-			top: 0,
-			bottom: 0
-		}
-
-		var svg = d3.select('#chart').append('svg')
-			.attr('viewBox', '0 0 ' + (diameter + margin.right) + ' ' + diameter)
-			.attr('width', (diameter + margin.right))
-			.attr('height', diameter)
-			.attr('class', 'chart-svg');
-
-		var root = d3.hierarchy(json)
-			.sum(function (d) {
-				return d.value;
-			})
-			.sort(function (a, b) {
-				return b.value - a.value;
-			});
-
-		bubble(root);
-
-
-		var node = svg.selectAll('.node')
-			.data(root.children)
-			.enter()
-			.append('g').attr('class', 'node')
-			.attr('transform', function (d) {
-				return 'translate(' + d.x + ' ' + d.y + ')';
-			})
-			.append('g').attr('class', 'graph');
-
-			node.append("circle")
-			.attr("r", function (d) {
-				return d.r;
-			})
-			.style("fill", function (d) {
-				return color(d.data.value);
-			});
-
-	
-			node.append("text")
-			.attr('class', 'textWrap')
-			.attr("dy", ".35em")
-			.attr("font-size", function (d) {
-				return d.r / 4 + "px";
-			})
-			.style("text-anchor", "middle")
-			.style("white-space", "pre")
-			.text(function (d) {
-				return d.data.name
-			})
-			// .attr('style',function(d){
-			// 	console.log(d)
-			// 	return "fill:#ffcccc"
-			// })
-			.style("fill", "#000")
-
-			// console.log(node.selectAll('.textWrap'), "@@")
-
-			// node.selectAll('.textWrap').each(function(i){
-			// 	// console.log(i.data.name.split(" "))
-			// 	i.data.name.split(" ").map((ele,index)=>{
-			// 		$(this).append('tspan').text(ele)
-			// 	})
-			// })
-
-			console.log(node.selectAll('.textWrap'))
-			console.log(node.selectAll('.textWrap').data(root.children).enter())
-			// node.append('tspan')
-			// .text("ASDF")
-
-		// svg.append("g")
-		// 	.attr("class", "legendOrdinal")
-		// 	.attr("transform", "translate(600,40)");
 		})
 	</script>
 	<!-- //해당페이지 js -->
