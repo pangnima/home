@@ -411,8 +411,10 @@ button.swiper-pagination-bullet{margin:0;padding:0;border:none;box-shadow:none;a
 .btn-accordion-1.is-hide + .area-accordion{display:none;}
 .btn-cart{display:flex; position:relative; background:#004c9b url(../images/icon_basket.png) 50% 50% no-repeat; background-size:32px 32px; width:64px; height:64px; border-radius:50%; font:0/0 a; box-shadow:2px 4px 8px 0 rgba(0, 0, 0, .3); align-items:center; justify-content:center;}
 .btn-cart .count{position:absolute; top:11px; left:11px; background:#f34e1a; max-width:26px; min-width:18px; height:18px; padding:3px; border-radius:18px; box-sizing:border-box; color:#fff; line-height:12px; text-align:center; font-family:"GyeonggiTitle"; font-size:12px;}
-.btn-top{display:flex; position:relative; background:#fff; width:32px; height:32px; margin:0 auto 10px; border-radius:50%; font:0/0 a; box-shadow:2px 4px 8px 0 rgb(0 0 0 / 30%); align-items:center; justify-content:center;}
-.btn-top::before{content:""; position:absolute; top:50%; left:50%; width:4px; height:4px; margin-top:4px; border-top:solid 2px #000; border-right:solid 2px #000; transform:translate(-50%,-100%) rotate(-45deg);}
+.btn-top{display:flex; position:relative; width:38px; height:38px; margin:0 auto 10px; border-radius:50%; font:0/0 a; box-shadow:2px 4px 8px 0 rgb(0 0 0 / 30%); align-items:center; justify-content:center;
+	background:#fff url(../images/icon_top.png) 50% 50% no-repeat;
+	background-size:14px 7px;
+}
 .btn-test{position:absolute;left:0;bottom:0;width:100%;padding-top:20px;color:#fff;text-align:center;font-size:16px;text-decoration:underline;transform:translateY(100%);}
 .btn-more-2{display:flex; background:transparent; padding:0; border:0; color:#007bca; font-size:14px; font-weight:bold; align-items:center; justify-content:center; width:100%;}
 .btn-more-2::before{content: ""; background:url(../images/icon_plus.png) 0 0 no-repeat; width:13px; height:13px; background-size:100% 100%; margin-right:4px;}
@@ -480,19 +482,7 @@ input[type="radio"].ipt-radio-1.type-2:disabled + label .txt-date{color:rgba(136
 .sel-type-1 > select{display:block;position:relative;background-color:transparent;width:100%;height:40px;padding:7px 30px 7px 14px;border:1px solid rgba(136,136,136,.5);border-radius:6px;box-sizing:border-box;color:#000;line-height:24px;text-overflow:ellipsis;font-size:16px;cursor:pointer;appearance:none;-webkit-appearance:none;-moz-appearance:none;-webkit-box-sizing:border-box;}
 .sel-type-1 > select::-ms-expand{display:none;}
 .sel-type-1 > .icon-arrow{position:absolute;top:50%;right:15px;background:url("../images/icon_sel.png") no-repeat 50% 50%;background-size:13px 10px;width:13px;height:10px;margin-top:-5px;cursor:pointer;opacity:.5;}
-.sel-type-2 select{display:block;position:relative;background:#fff;margin-left:auto;border:0; font-size:14px; line-height:20px;
-	background-color:transparent;
-	width:100%;height:40px;
-	box-sizing:border-box;
-	color:#000;
-	text-overflow:ellipsis;cursor:pointer;appearance:none;-webkit-appearance:none;-moz-appearance:none;-webkit-box-sizing:border-box;
-}
-.sel-type-2 select:after{
-	content:"";
-	display:block;
-	width:10px; height:10px;
-	background:#000;
-}
+.sel-type-2 select{display:block; position:relative; background:#fff; background:url("../images/icon_sel_arrow.png") no-repeat 100% 50%; background-size:14px 8px; background-color:transparent; margin-left:auto; padding-right:20px; border:0; box-sizing:border-box; color:#000; line-height:20px; font-size:14px; cursor:pointer; appearance:none; -webkit-appearance:none; -moz-appearance:none; -webkit-box-sizing:border-box;}
 /* textarea */
 .textarea-type-1{position:relative;background:#fff;border-radius:6px;}
 .textarea-type-1.mt-2{margin-top:5px;}
@@ -790,6 +780,7 @@ input[type="radio"].ipt-radio-1.type-2:disabled + label .txt-date{color:rgba(136
 .box-more-2 > .inner{color:#444;line-height:20px;font-size:14px;}
 .box-more-2.color-2 > .inner{color:#888;line-height:20px;font-size:14px;}
 .box-more-2 .btn-wrap{margin-top:5px;text-align:center;}
+.box-more-2 .btn-wrap.mt-0{margin-top:0}
 .box-more-2 .btn-more{display:inline-block;position:relative;vertical-align:top;}
 .box-more-2.is-ellipsis > .inner{display:-webkit-box;overflow:hidden;max-height:20px;text-overflow:ellipsis;text-rendering:geometricprecision;word-wrap:break-word;-webkit-box-orient:vertical;-webkit-line-clamp:1;}
 /* text-rendering:geometricprecision;webfont aos 자간 버그 대응 */
@@ -981,7 +972,7 @@ input[type="radio"].ipt-radio-1.type-2:disabled + label .txt-date{color:rgba(136
 /* 리뷰 */
 .tag-box{padding-top:30px;}
 .tag-box:nth-of-type(1){padding-top:0;}
-.store-aword dt{display:flex;background:#004c9b;padding:0 10px;border-radius:16px 16px 0 0;color:#fff;line-height:19px;font-size:16px;align-items:center;flex-wrap:wrap;}
+.store-aword dt{display:flex; background:#004c9b; padding:0 10px; border-radius:16px 16px 0 0; color:#fff; line-height:19px; font-family:"GyeonggiTitle"; font-size:16px; font-weight:bold; align-items:center; flex-wrap:wrap;}
 .store-aword dt::before{content:"";display:block;background:url(../images/icon_owner.png) 0 0 no-repeat;background-size:100% auto;width:45px;height:45px;}
 .store-aword dd{padding:4px 20px; border:solid 1px #eaeaea; border-radius: 0 0 16px 16px;}
 .store-aword dd p {font-size:14px; line-height:20px; padding:8px 0;}
@@ -1016,7 +1007,7 @@ input[type="radio"].ipt-radio-1.type-2:disabled + label .txt-date{color:rgba(136
 .review-photo li button{position:absolute;top:-5px;right:-5px;border:0;font:0/0 a;}
 
 .cloudTag text{font-family:"GyeonggiTitle";}
-.cloudTag .tag-chart g:first-child{position: relative; z-index:10;}
+.cloudTag circle{opacity:0.85;}
 @-webkit-keyframes case-2{
 	0%{width:0;opacity:0;}
 	25%{width:42px;}
