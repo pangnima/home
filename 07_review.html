@@ -77,7 +77,7 @@
 							<label for="revieTaste-8">간이 안맞아요.</label>
 						</li>
 					</ul>
-					<button type="button" class="btn-more"><span>더보기</span></button>
+					<button type="button" class="btn-more-2"><span>더보기</span></button>
 				</div>
 
 				<div class="tag-box">
@@ -117,7 +117,7 @@
 						</li>
 						<li>
 							<input type="checkbox" id="revieOther-9">
-							<label for="revieOther-9">포장상태 개선이 필요해요..</label>
+							<label for="revieOther-9">포장상태 개선이 필요해요.</label>
 						</li>
 						<li>
 							<input type="checkbox" id="revieOther-10">
@@ -132,7 +132,7 @@
 							<label for="revieOther-12">전화 통화가 어려웠어요.</label>
 						</li>
 					</ul>
-					<button type="button" class="btn-more"><span>더보기</span></button>
+					<button type="button" class="btn-more-2"><span>더보기</span></button>
 				</div>
 			</div>
 			<!-- // 태그 선택 -->
@@ -140,33 +140,35 @@
 			<!-- 사진 첨부  -->
 			<div class="grid-content bd-top-1 gap-13 bg-color-white">
 				<h2 class="txt-type-9 txt-align-center">사진을 첨부해주세요!</h2>
-				<div class="swiper-container review-photo">
-					<ul class="swiper-wrapper">
-						<li class="swiper-slide">
-							<input type="file" id="uploadImg">
-							<label for="uploadImg">
-								<span>사진(<em>0</em>/5)</span>
-							</label>
-						</li>
-						<li class="swiper-slide">
-							<figure>
-								<img src="static/images/@photo.png" alt="">
-							</figure>
-							<button type="button" class="icon-close"><span>닫기</span></button>
-						</li>
-						<li class="swiper-slide">
-							<figure>
-								<img src="static/images/@photo.png" alt="">
-							</figure>
-							<button type="button" class="icon-close"><span>닫기</span></button>
-						</li>
-						<li class="swiper-slide">
-							<figure>
-								<img src="static/images/@photo.png" alt="">
-							</figure>
-							<button type="button" class="icon-close"><span>닫기</span></button>
-						</li>
-					</ul>
+				<div class="review-photo">
+					<div class="swiper-container">
+						<ul class="swiper-wrapper">
+							<li class="swiper-slide">
+								<input type="file" id="uploadImg">
+								<label for="uploadImg">
+									<span>사진(<em>0</em>/5)</span>
+								</label>
+							</li>
+							<li class="swiper-slide">
+								<figure>
+									<img src="static/images/@photo.png" alt="">
+								</figure>
+								<button type="button" class="icon-close"><span>닫기</span></button>
+							</li>
+							<li class="swiper-slide">
+								<figure>
+									<img src="static/images/@photo.png" alt="">
+								</figure>
+								<button type="button" class="icon-close"><span>닫기</span></button>
+							</li>
+							<li class="swiper-slide">
+								<figure>
+									<img src="static/images/@photo.png" alt="">
+								</figure>
+								<button type="button" class="icon-close"><span>닫기</span></button>
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!-- // 사진 첨부  -->
@@ -233,7 +235,7 @@
 	<script>
 		$(document).ready(function(){
 			var photos = new Swiper('.swiper-container', {
-				width: 100,
+				width: "100",
 				spaceBetween:10
 			});
 		})
