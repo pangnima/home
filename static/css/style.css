@@ -410,8 +410,8 @@ button.swiper-pagination-bullet{margin:0;padding:0;border:none;box-shadow:none;a
 .btn-accordion-1.is-hide + .area-accordion{display:none;}
 .btn-cart{display:flex; position:relative; background:#004c9b url(../images/icon_basket.png) 50% 50% no-repeat; background-size:32px 32px; width:64px; height:64px; border-radius:50%; font:0/0 a; box-shadow:2px 4px 8px 0 rgba(0, 0, 0, .3); align-items:center; justify-content:center;}
 .btn-cart .count{position:absolute; top:11px; left:11px; background:#f34e1a; max-width:26px; min-width:18px; height:18px; padding:3px; border-radius:18px; box-sizing:border-box; color:#fff; line-height:12px; text-align:center; font-family:"GyeonggiTitle"; font-size:12px;}
-.btn-top{display:flex;background:#fff;width:32px;height:32px;margin:0 auto 10px;border-radius:50%;font:0/0 a;box-shadow:2px 4px 8px 0 rgb(0 0 0 / 30%);align-items:center;justify-content:center;}
-.btn-top::before{content:"";position:absolute;width:4px;height:4px;margin-top:4px;border-top:solid 2px #000;border-right:solid 2px #000;transform:rotate(-45deg);}
+.btn-top{display:flex; position:relative; background:#fff; width:32px; height:32px; margin:0 auto 10px; border-radius:50%; font:0/0 a; box-shadow:2px 4px 8px 0 rgb(0 0 0 / 30%); align-items:center; justify-content:center;}
+.btn-top::before{content:""; position:absolute; top:50%; left:50%; width:4px; height:4px; margin-top:4px; border-top:solid 2px #000; border-right:solid 2px #000; transform:translate(-50%,-100%) rotate(-45deg);}
 .btn-test{position:absolute;left:0;bottom:0;width:100%;padding-top:20px;color:#fff;text-align:center;font-size:16px;text-decoration:underline;transform:translateY(100%);}
 
 
@@ -905,7 +905,7 @@ input[type="radio"].ipt-radio-1.type-2:disabled + label .txt-date{color:rgba(136
 .tool-tip::after{content:attr(data-tip-txt);position:absolute;top:0;background:#fff;padding:8px 16px;border-radius:11px;color:#000;z-index:10;line-height:16px;font-size:12px;white-space:pre;opacity:0;visibility:hidden;transform:translateY(-100%);box-shadow:0 3px 6px 0 rgba(0, 0, 0, .16);transition:all .25s;}
 .tool-tip:hover::after{opacity:1;visibility:visible;transform:translateY(calc(-100% - 6px));animation:tool-tip .5s 2.5s forwards;-webkit-animation:tool-tip .5s 2.5s forwards;}
 .tool-tip.bottom:after{top:auto; bottom:0; right:0; transform:translateY(100%);}
-.tool-tip.bottom:hover::after{opacity:1;visibility:visible;transform:translateY(100%);animation:tool-tip .5s 2.5s forwards;-webkit-animation:tool-tip-bottom .5s 2.5s forwards;}
+.tool-tip.bottom:hover::after{opacity:1;visibility:visible;transform:translateY(calc(100% + 6px));animation:tool-tip .5s 2.5s forwards;-webkit-animation:tool-tip-bottom .5s 2.5s forwards;}
 
 @-webkit-keyframes tool-tip {
 	0% {opacity:1; transform:translateY(calc(-100% - 6px)); visibility:visible}
