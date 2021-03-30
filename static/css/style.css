@@ -228,6 +228,7 @@ button.swiper-pagination-bullet{margin:0;padding:0;border:none;box-shadow:none;a
 .txt-align-left{text-align:left;}
 .txt-align-center{text-align:center;}
 .txt-align-right{text-align:right;}
+.txt-side-center{display:flex; align-items:center; justify-content:space-between;}
 .txt-type-1{line-height:33px;font-size:22px;font-weight:normal;}
 .txt-type-2{margin-top:10px;line-height:20px;font-size:14px;font-weight:normal;}
 .txt-type-2.mt-0{margin-top:0;}
