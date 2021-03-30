@@ -1270,7 +1270,7 @@
 						</div>
 						<!-- //매장정보 -->
 
-						<!-- 별점 -->
+						<!-- 리뷰로 변경 : 2021-03-30 -->
 						<div class="swiper-slide">
 							<div class="grid-content bd-bottom-1 gap-4 bg-color-white">
 								<p class="title-type-2 txt-align-center">3.5</p>
@@ -1333,13 +1333,13 @@
 							<!-- // 리뷰 분석 없을 경우 -->
 
 							<div class="grid-content mt-2 gap-4 bg-color-white">
-								<p class="title-type-6 bold">
+								<p class="title-type-6 bold txt-side-center">
 									고객님들의 리뷰를 분석했어요!
 									<i class="tool-tip bottom" data-tip-txt="고객님들의 선택을 많이 받은
 리뷰일 수록 크게 노출돼요."></i>
 								</p>
 								<!-- 클라우드태그 -->
-								<div id="chart" class="chart"></div>
+								<div id="cloudTag" class="cloudTag"></div>
 							</div>
 
 
@@ -1353,7 +1353,8 @@
 
 							<!-- 추천 메뉴 있을 경우-->
 							<div class="grid-content mt-2 gap-4 bg-color-white">
-								<p class="title-type-6 bold">고객님들의 우리매장 추천 메뉴!
+								<p class="title-type-6 bold txt-side-center">
+									<span>고객님들의 우리매장 추천 메뉴!</span>
 									<i class="tool-tip bottom" data-tip-txt="고객님들의 추천을 많이
 받은 메뉴에요."></i>
 								</p>
@@ -1748,7 +1749,8 @@
 			});
 		});
 
-		// .swiper-banner swiper.js 적용
+		// 2021-03-30 스크립트 추가 
+		// 리뷰 이미지 스와이프
 		var reviewImg = new Swiper('.swiper-review-img > .swiper-container', {
 			pagination: {
 				el: '.swiper-pagination',
@@ -1756,50 +1758,49 @@
 			}
 		});
 
+		// 2021-03-30 스크립트 추가 
+		// 클라우드 태그
 		var review = {
 			'reviews': [{
 					'name': '맛집/인정이에요',
-					'ranking': 1
+					'count': 10
 				},
 				{
-					'name': '다음에도 주문하고/싶은 맛이에요',
-					'ranking': 2
+					'name': '다음에도/주문하고/싶은 맛이에요',
+					'count': 9
 				},
 				{
 					'name': '가격대비/가성비가/좋아요',
-					'ranking': 3
+					'count': 8
 				},
 				{
 					'name': '한 번쯤/먹을만해요',
-					'ranking': 4
+					'count': 7
 				},
 				{
 					'name': '사이드/메뉴가/아쉬워요',
-					'ranking': 5
+					'count': 6
 				},
 				{
 					'name': '실망이에요',
-					'ranking': 6
+					'count': 5
 				},
 				{
 					'name': '양이 적어요',
-					'ranking': 7
+					'count': 4
 				}
 			]
 		}
 
-	
-
-		var width = document.querySelector("#chart").clientWidth;
-			height = 370;
+		var width = document.querySelector("#cloudTag").clientWidth;
+			height = document.querySelector("#cloudTag").clientWidth+60;
 		var nodes = d3.range(review.reviews.length).map(function (i, v) {
 				return {
-					radius: (review.reviews[i].ranking + width / 20) * 3
+					radius: (review.reviews[i].count * 5 ) + (width / 15)
 				}
 			}),
 			scale = d3.scale.linear(),
-			color = ["#57cbff", "#ffea74", "#394565", "#f4649c", "#7f5dc7", 'pink', 'blue'];
-
+			color = ["#34befc", "#fde458", "#003a75", "#52c960", "#e36697", '#e5e5e5'];
 		var force = d3.layout.force()
 			.gravity(0.05)
 			.charge(function (d, i) {
@@ -1809,9 +1810,7 @@
 			.size([width, height]);
 		
 			force.start();
-		
-
-		var svg = d3.select(".chart")
+		var svg = d3.select(".cloudTag")
 			.append("svg")
 			.attr('viewbox', '0 0 ' + width + ' ' + height)
 			.attr("width", width)
@@ -1827,136 +1826,36 @@
 			.attr("r", function (d) {
 				return d.radius;
 			})
+			.data(review.reviews)
 			.style("fill", function (d, i) {
-				return color[i];
+				if(d.count < 6 ){return color[5]} else {return color[i];}
 			});
 
 			tagItem.append('text')
 			.attr('class', 'textWrap')
 			.style("text-anchor", "middle")
 			.style("white-space", "pre")
-			.style("fill" , "#fff")
+			.style('font-weight','bold')
 			.attr("font-size", function (d) {
 				return d.radius / 4 + "px";
 			})
-			.append('tspan')
-			// .attr('class', 'lines')
-			// .attr('x','0')
-			// .attr('y' , function(){})
-			
-			
-			.text(function(d){
-				var aa = review.reviews[d.index].name.split("/");
-				return aa[0]
-				// return review.reviews[d.index].name
+			.data(review.reviews)
+			.style("fill", function (d, i) {
+				if(d.count < 6 ){return "#000"} else {return "#fff";}
 			})
-			.attr('dy','-1em')
-			.attr('x','0')
-
-			d3.selectAll('.textWrap').append('tspan')
-			.text(function(d){
-				var aa = review.reviews[d.index].name.split("/");
-				return aa[1]
+			.each(function(d){
+				var n = d.name.split('/');
+				var text = d3.select(this)
+					.attr("dy", n.length / 3 - (n.length-1) * 0.9 + 'em')
+					.text(n[0]);
+				for (var i = 1; i < n.length; i++) {
+					text.append("tspan")
+						.attr('x', 0)
+						.attr('dy', '1.3em')
+						.text(n[i])
+				}
 			})
-			.attr('dy','1.3em')
-			.attr('x','0')
 
-			d3.selectAll('.textWrap').append('tspan')
-			.text(function(d){
-				var aa = review.reviews[d.index].name.split("/");
-				return aa[2]
-			})
-			.attr('dy','1.3em')
-			.attr('x','0')
-
-			// switch(con.length){
-			// 	case 1 : d3.select(this).text("@@")
-			// 	case 2 : d3.select(this).append('tsapn').text("2");
-			// 	case 3 : d3.select(this).append('tsapn').text("3");
-			// 	case 4 : d3.select(this).append('tsapn').text("4");
-			// }
-			// 	// return con
-
-			// .text(function(d){
-			// 	// return review.reviews[d.index].name
-			// })
-
-			// console.log(aa)
-			// function fu(aa) {
-			// 	var bb = aa.split(' ')
-			// 	// /
-			// 	console.log(this)
-			// 	// return $('.textWrap').append('tspan').text("ASDFASDF")
-			// }
-			// .text(function (d) {
-			// 	var con = review.reviews[d.index].name.split(" ")
-			// 	// console.log(con.length)
-			// 	// return review.reviews[d.index].name
-			// 	// console.log(con.split(" "))
-
-
-			// })
-
-			// wrap(aa,100)
-			// aa.each(function(){
-			// 	console.log(aa)
-			// })
-
-
-		// var data = review.reviews.map( function(v,i){
-		// 	return v.name.split("/")
-		// })
-	
-		// data.map(function(v,i){
-		// 	// console.log(v.length , i , tagItem)
-		// 	for(j=0, len=v.length; j<len; j++){
-		// 		console.log(tagItem[i][j])
-		// 		tagItem[i][j].append('tspan')
-		// 		.text(function(){
-		// 			return "ASDFASDF"
-		// 		})
-		// 	}
-		// })
-			
-			
-
-		
-		// var tspan = svg.selectAll()
-
-		// var g = svg.selectAll("g")
-		// 	.data(nodes)
-		// 	.enter()
-		// 	.append("g")
-		// 	.append("svg");
-
-		// g.append("circle")
-		// 	.attr("r", function (d) {
-		// 		return d.radius;
-		// 	})
-		// 	.style("fill", function (d, i) {
-		// 		return color[i];
-		// 	});
-
-
-
-		// g.append('text')
-		// 	.attr('class', 'textWrap')
-		// 	.attr("dy", ".35em")
-		// 	.attr("font-size", function (d) {
-		// 		return 12 + "px";
-		// 	})
-		// 	.style("text-anchor", "middle")
-		// 	.style("white-space", "pre")
-		// 	.style("fill" , "#fff")
-		// 	.text(function (d) {
-		// 		return review.reviews[d.index].name
-		// 	})
-
-
-
-		// svg.append('text')
-		// .attr('class', 'txt')
-		// .style('display', 'none');
 
 		force.on("tick", function (e) {
 			var q = d3.geom.quadtree(nodes),
@@ -1966,15 +1865,9 @@
 			while (++i < n) q.visit(collide(nodes[i]));
 
 			svg.selectAll("g")
-				.attr('transform', function (d) {
-					return 'translate(' + d.x + ' ' + d.y + ')';
-				})
-				// .attr("cx", function (d) {
-				// 	return d.x;
-				// })
-				// .attr("cy", function (d) {
-				// 	return d.y;
-				// });
+			.attr('transform', function (d) {
+				return 'translate(' + d.x + ' ' + d.y + ')';
+			})
 		});
 
 		function collide(node) {
